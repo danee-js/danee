@@ -1,0 +1,23 @@
+{
+  "name": "danee",
+  "description": "Dynamic, Automated, Natural, Elegant and Efficient",
+  "version": "0.0.0",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "clipse": "^0.0.12"
+  },
+  "bin": {
+    "danee": "src/index.ts"
+  },
+  "scripts": {
+    "danee": "bun src/index.ts"
+  }
+}
