@@ -5,6 +5,7 @@
   "module": "src/index.ts",
   "type": "module",
   "devDependencies": {
+    "@biomejs/biome": "^2.0.6",
     "@types/bun": "latest"
   },
   "peerDependencies": {
@@ -18,6 +19,9 @@
     "danee": "src/index.ts"
   },
   "scripts": {
-    "danee": "bun src/index.ts"
+    "danee": "bun src/index.ts",
+    "format": "bunx @biomejs/biome format ./ --write",
+    "lint": "bunx @biomejs/biome lint ./ --write",
+    "make": "bun build src/index.ts --outfile exe/danee --compile --minify"
   }
 }
