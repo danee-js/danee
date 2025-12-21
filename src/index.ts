@@ -1,18 +1,21 @@
 #! /usr/bin/env bun
 
-import packagejson from "../package.json";
-import { Clipse } from "clipse";
 import { intro, outro } from "@clack/prompts";
+import { Clipse } from "clipse";
 import pc from "picocolors";
+import packagejson from "../package.json";
+import { createCmd } from "./commands/create";
+import { initCmd } from "./commands/init";
+import { serveCmd } from "./commands/serve";
 import checkVersion from "./utils/checkLastVersion";
+
+intro(`${pc.bold(pc.blue("|> Danee"))} is ready to help you with your tasks.`);
 
 const danee = new Clipse("danee", packagejson.description, packagejson.version);
 danee
   .action(async () => {
-    intro(
-      `${pc.bold(pc.blue("|> Danee"))} is ready to help you with your tasks.`,
-    );
     await checkVersion(packagejson.version);
     outro("A new framework is born.");
   })
+  .addSubcommands([createCmd, initCmd, serveCmd])
   .ready();
