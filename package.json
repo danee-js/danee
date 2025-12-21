@@ -5,14 +5,15 @@
   "module": "src/index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "bun-fetch-mock": "^1.0.0"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@clack/prompts": "^0.11.0",
-    "clipse": "^0.0.12",
+    "clipse": "0.0.15",
     "picocolors": "^1.1.1"
   },
   "bin": {
