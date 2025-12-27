@@ -9,7 +9,6 @@ let createdSlugs: string[] = [];
 
 function cleanupDir(dir: string) {
   if (fs.existsSync(dir)) {
-    console.log(dir);
     fs.rmSync(dir, { recursive: true, force: true });
   }
 }
