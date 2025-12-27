@@ -1,6 +1,6 @@
 import { log } from "@clack/prompts";
 import { Clipse } from "clipse";
-import slugify from "../utils/slugify";
+import { projectService } from "../services/project.service";
 
 export const initCmd = new Clipse("init", "Initialize a new project");
 initCmd
@@ -11,11 +11,16 @@ initCmd
     },
   ])
   .action(async (args) => {
-    if (args.name) {
-      const name = slugify(args.name);
-      log.success(`Project ${name} initialized successfully`);
+    if (!args.name) {
+      log.error("Project name cannot be empty");
+      log.info("usage: danee init <name>");
       return;
     }
-    log.error("Project name cannot be empty");
-    log.info("usage: danee init <name>");
+
+    try {
+      const name = await projectService.initialize(args.name);
+      log.success(`Project ${name} initialized successfully`);
+    } catch (err) {
+      log.error((err as { message: string }).message);
+    }
   });

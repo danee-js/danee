@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.11.0",
+    "@prisma/client": "^7.2.0",
     "clipse": "0.0.15",
-    "picocolors": "^1.1.1"
+    "picocolors": "^1.1.1",
+    "prisma": "^7.2.0"
   },
   "bin": {
     "danee": "src/index.ts"
