@@ -10,7 +10,7 @@ import { serveCmd } from "./commands/serve";
 import checkVersion from "./utils/checkLastVersion";
 import { getAction } from "./utils/interactCLI";
 
-intro(`${pc.bold(pc.blue("|> Danee"))} is ready to help you with your tasks.`);
+intro(`${pc.bold(pc.blue("।> Danee"))} is ready to help you with your tasks.`);
 
 const danee = new Clipse("danee", packagejson.description, packagejson.version);
 danee
