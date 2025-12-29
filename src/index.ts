@@ -8,6 +8,7 @@ import { createCmd } from "./commands/create";
 import { initCmd } from "./commands/init";
 import { serveCmd } from "./commands/serve";
 import checkVersion from "./utils/checkLastVersion";
+import { getAction } from "./utils/interactCLI";
 
 intro(`${pc.bold(pc.blue("|> Danee"))} is ready to help you with your tasks.`);
 
@@ -19,3 +20,5 @@ danee
   })
   .addSubcommands([createCmd, initCmd, serveCmd])
   .ready();
+
+getAction();

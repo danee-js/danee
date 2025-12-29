@@ -20,6 +20,7 @@ initCmd
     try {
       const name = await projectService.initialize(args.name);
       log.success(`Project ${name} initialized successfully`);
+      log.info(`cd ${name} && danee serve`);
     } catch (err) {
       log.error((err as { message: string }).message);
     }
